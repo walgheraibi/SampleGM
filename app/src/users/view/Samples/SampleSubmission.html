@@ -1,0 +1,85 @@
+<div ng-app="SamplesDemo" ng-controller="SamplesCtrl as ctrl" layout="column">
+    <md-content class="md-padding" layout="column">
+        <form ng-submit="$event.preventDefault()">
+            <h1>Sample Submission</h1>
+            <div layout-gt-sm="row">
+                <md-input-container >
+                    <label>Disease</label>
+                </md-input-container>
+                    
+                </div>
+
+            <div layout-gt-sm="row">
+                <md-autocomplete flex
+                                 ng-disabled="ctrl.isDisabled"
+                                 md-no-cache="ctrl.noCache"
+                                 md-selected-item="ctrl.selectedItem"
+                                 md-search-text="ctrl.searchText"
+                                 md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                 md-item-text="item.display"
+                                 md-floating-label="Favorite state">
+                    <span md-highlight-text="ctrl.searchText">{{item.display}}</span>
+                </md-autocomplete>
+                <md-button class="md-primary" ng-click="addItem($event)">
+                    Add
+                </md-button>
+            </div>
+            <div layout-gt-sm="row">
+                <md-list>
+                    <md-item ng-repeat="item in todos">
+                        <md-item-content>
+                            <p>
+                                {{item}}
+                            </p>
+            </md-item-content>
+            </md-item>
+            </md-list>
+            </div>
+            <md-input-container>
+            <label>Gender</label>
+            </md-input-container>
+                <md-input-container>
+
+                     <md-radio-group>
+                        <md-radio-button value="Male"> Male </md-radio-button>
+                        <md-radio-button value="Female"> Female </md-radio-button>
+                    </md-radio-group>
+                </md-input-container>
+
+            <div >
+                <md-input-container>
+                    <label>Ethnicity</label>
+                    <input ng-model="user.company" >
+                </md-input-container>
+                <md-input-container flex>
+                    <label>Comment</label>
+                    <input type="date" ng-model="user.submissionDate">
+                </md-input-container>
+            </div>
+
+        <md-content class="md-padding">
+            <md-input-container md-no-float>
+                <md-icon md-svg-src="/demo-partials/input/demoIcons/icons/ic_person_24px.svg"></md-icon>
+                <input ng-model="user.name" type="text" placeholder="Name">
+            </md-input-container>
+            <md-input-container md-no-float>
+                <md-icon md-svg-src="/demo-partials/input/demoIcons/icons/ic_phone_24px.svg"></md-icon>
+                <input ng-model="user.phone" type="text" placeholder="Phone Number">
+            </md-input-container>
+            <md-input-container md-no-float>
+                <md-icon md-svg-src="/demo-partials/input/demoIcons/icons/ic_email_24px.svg"></md-icon>
+                <input ng-model="user.email" type="email" placeholder="Email">
+            </md-input-container>
+            <md-input-container md-no-float>
+                <md-icon md-svg-src="/demo-partials/input/demoIcons/icons/ic_place_24px.svg"></md-icon>
+                <input ng-model="user.address" type="text" placeholder="Address">
+            </md-input-container>
+        </md-content>
+
+</form>
+<div>
+
+
+
+</div>
+
